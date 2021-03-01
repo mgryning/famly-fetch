@@ -105,7 +105,7 @@ if __name__ == "__main__":
                 req = urllib.request.Request(url=url)
 
                 with urllib.request.urlopen(req) as r, open(
-                    "%i.jpg" % (img_number), "wb"
+                    "{0}-{1}.jpg".format(img_number, randrange(1,10000)), "wb"
                 ) as f:
                     if r.status != 200:
                         raise "B0rked! %s" % body
